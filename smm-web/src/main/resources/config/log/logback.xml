@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+	
+	<!-- 开发控制台打印日志 -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>%date %-5level [%c{0}.%M:%L] - %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	<!-- 文件输出日志 (文件大小策略进行文件输出，超过指定大小对文件备份) -->
+	<appender name="SMM_LOG" class="ch.qos.logback.core.FileAppender">
+		<File>/opt/x7700/logs/tomcat/app/tomcat_smm/smm.log</File>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{32} - %msg%n</Pattern>
+		</encoder>
+	</appender>
+	
+	<!-- 第三方日志 -->
+	<appender name="The3rd_LOG" class="ch.qos.logback.core.FileAppender">
+		<File>/opt/x7700/logs/tomcat/app/tomcat_smm/smm_3rd.log</File>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{32} - %msg%n</Pattern>
+		</encoder>
+	</appender>
+	
+	<logger name="org" level="WARN">
+		<appender-ref ref="The3rd_LOG"/>
+	</logger>
+	
+	<root level="DEBUG">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="SMM_LOG" />
+	</root>
+	
+</configuration>

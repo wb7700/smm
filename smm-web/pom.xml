@@ -5,7 +5,7 @@
 		<groupId>com.x7700</groupId>
 		<artifactId>smm-pom</artifactId>
 		<version>1.0-SNAPSHOT</version>
-		<relativePath>../ssm-pom/pom.xml</relativePath>
+		<relativePath>../smm-pom/pom.xml</relativePath>
 	</parent>
 
 	<artifactId>smm-web</artifactId>
@@ -15,7 +15,17 @@
 	<url>http://maven.apache.org</url>
 
 	<dependencies>
+		<dependency>
+			<groupId>com.x7700</groupId>
+			<artifactId>smm-service</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
 
+		<dependency>
+			<groupId>com.x7700</groupId>
+			<artifactId>smm-commons</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>
