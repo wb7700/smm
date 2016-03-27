@@ -1,0 +1,2 @@
+smm代表Spring，SpringMVC，MyBatis这3个主流框架。
+目前互联网主要使用的还是SpringMVC，Struts2用的不多。正好作为学习，结合公司的项目和技术点开始构建一个基础平台，以后以此项目作为学习基础。
